@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+Courier Carter's Cwest/[Ll]ibrary/
+Courier Carter's Cwest/[Tt]emp/
+Courier Carter's Cwest/[Oo]bj/
+Courier Carter's Cwest/[Bb]uild/
+Courier Carter's Cwest/[Bb]uilds/
+Courier Carter's Cwest/[Ll]ogs/
+Courier Carter's Cwest/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
