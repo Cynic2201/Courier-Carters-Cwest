@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         float yStore = moveDirection.y;
         moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
 
-        if (Input.GetKey(KeyCode.LeftShift)) moveDirection = moveDirection.normalized * moveSpeed * sprintMultiplyer;
+        if (Input.GetKey(KeyCode.LeftShift)) moveDirection = (transform.forward * Input.GetAxis("Vertical") * moveSpeed * sprintMultiplyer) + (transform.right * Input.GetAxis("Horizontal") * moveSpeed);
         else moveDirection = moveDirection.normalized * moveSpeed;
 
         moveDirection.y = yStore;
