@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 		if (dead) { 
 		Debug.Log(transform.position);
 		charController.enabled = false;
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		charController.transform.position = respawn;
 		charController.enabled = true;
 		dead = false;
