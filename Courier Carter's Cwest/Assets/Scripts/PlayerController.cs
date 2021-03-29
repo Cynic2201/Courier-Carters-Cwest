@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     //public Rigidbody RB;
     public CharacterController charController;
+	public Text displayText;
 
     private Vector3 moveDirection;
 	private Vector3 respawn;
@@ -78,6 +80,11 @@ public class PlayerController : MonoBehaviour
 		if(other.tag == "Death"){
 			dead = true;
 			Debug.Log("touched death" + respawn);
+		}
+		if(other.tag == "Finish"){
+			charController.enabled = false;
+			displayText.text = "You win!";
+			Debug.Log("touched finish");
 		}
 	}
 }
