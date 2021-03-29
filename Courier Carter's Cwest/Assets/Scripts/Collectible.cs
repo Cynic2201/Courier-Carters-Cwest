@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Testview : MonoBehaviour
+public class Collectible : MonoBehaviour
 {
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +16,11 @@ public class Testview : MonoBehaviour
     {
         
     }
+	
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Player"){
+			Destroy(gameObject);
+		}
+	}
 }
