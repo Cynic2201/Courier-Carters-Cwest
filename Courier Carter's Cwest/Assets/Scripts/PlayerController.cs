@@ -46,10 +46,18 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpForce;
+				Debug.Log("Working");
             }
         }
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         charController.Move(moveDirection * Time.deltaTime);
     }
+	
+		private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Checkpoint"){
+			Debug.Log("Checkpoint");
+		}
+	}
 }
