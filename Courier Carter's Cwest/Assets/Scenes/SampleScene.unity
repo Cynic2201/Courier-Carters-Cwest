@@ -337,12 +337,9 @@ GameObject:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
   - component: {fileID: 811580307}
   - component: {fileID: 811580308}
   - component: {fileID: 811580309}
-=======
->>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
 =======
 >>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
 =======
@@ -366,7 +363,6 @@ AudioListener:
   m_Enabled: 1
 --- !u!20 &811580305
 Camera:
-<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -433,15 +429,12 @@ MonoBehaviour:
 >>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
 =======
 >>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
-=======
->>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811580303}
   m_Enabled: 1
-<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -474,8 +467,6 @@ Rigidbody:
 --- !u!136 &811580309
 CapsuleCollider:
 =======
-=======
->>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
 =======
 >>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
 =======
@@ -526,7 +517,6 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -535,8 +525,6 @@ Transform:
   m_Direction: 1
   m_Center: {x: 0, y: -0.75, z: 0}
 =======
-=======
->>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
 =======
 >>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
 =======
@@ -550,9 +538,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
-=======
 >>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
 =======
 >>>>>>> parent of 4852531 (Merge branch 'main' of https://github.com/pokemon2201/Courier-Carters-Cwest into main)
