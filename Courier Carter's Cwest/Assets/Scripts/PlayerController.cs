@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class PlayerController : MonoBehaviour
     public CharacterController charController;
 
     private Vector3 moveDirection;
+	private Vector3 respawn;
     public float gravityScale;
+	private bool dead = false;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
         //RB = GetComponent<Rigidbody>();
         charController = GetComponent<CharacterController>();
     }
+	
 
     // Update is called once per frame
     void Update()
@@ -51,5 +55,29 @@ public class PlayerController : MonoBehaviour
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         charController.Move(moveDirection * Time.deltaTime);
+		
+		if (dead) { 
+		Debug.Log(transform.position);
+		charController.enabled = false;
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		charController.transform.position = respawn;
+		charController.enabled = true;
+		dead = false;
+		Debug.Log("seen dead");
+		Debug.Log(transform.position);
+		}
     }
+	
+		private void OnTriggerEnter(Collider other)
+	{
+		
+		if(other.tag == "Checkpoint"){
+			respawn = other.transform.position;
+			Debug.Log(respawn);
+		}
+		if(other.tag == "Death"){
+			dead = true;
+			Debug.Log("touched death" + respawn);
+		}
+	}
 }
