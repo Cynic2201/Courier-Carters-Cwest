@@ -122,6 +122,7 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &214419882
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +216,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 2b2e7ca... awd
 --- !u!1 &259553216
 =======
 --- !u!1 &188002093
@@ -418,11 +421,15 @@ GameObject:
   m_Layer: 0
 <<<<<<< HEAD
   m_Name: Camera
+<<<<<<< HEAD
   m_TagString: Player
 =======
   m_Name: Plane (1)
   m_TagString: Untagged
 >>>>>>> 4a794114832c3eb90439ecd153bf0c139fa48000
+=======
+  m_TagString: Untagged
+>>>>>>> parent of 2b2e7ca... awd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,12 +504,16 @@ Transform:
 <<<<<<< HEAD
   m_GameObject: {fileID: 811580303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 2.41, y: 4.03, z: 4.856703}
 =======
   m_GameObject: {fileID: 691900557}
   m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
   m_LocalPosition: {x: 5.991148, y: -0.34, z: 12.77}
 >>>>>>> 4a794114832c3eb90439ecd153bf0c139fa48000
+=======
+  m_LocalPosition: {x: 2.41, y: 3, z: 4.856703}
+>>>>>>> parent of 2b2e7ca... awd
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1106,6 +1117,7 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1923841231
 =======
 --- !u!1 &1871056603
@@ -1265,3 +1277,5 @@ Transform:
   m_RootOrder: 6
 >>>>>>> 4a794114832c3eb90439ecd153bf0c139fa48000
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 2b2e7ca... awd
