@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Checkpoint
   - Death
+  - Level1
   layers:
   - Default
   - TransparentFX

@@ -86,5 +86,9 @@ public class PlayerController : MonoBehaviour
 			displayText.text = "You win!";
 			Debug.Log("touched finish");
 		}
+		if(other.tag == "Level1"){
+			SceneManager.LoadScene(sceneName: "Level 1 - City");
+			Debug.Log("touched level 1 portal");
+		}
 	}
 }
