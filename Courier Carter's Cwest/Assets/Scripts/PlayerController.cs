@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 	public Text displayText;
 	public int levelsCompleted = 0;
 	public bool canDub = true;
+	public bool canDub2 = false;
+	public bool reloaded = false;
 
     private Vector3 moveDirection;
 	private Vector3 respawn;
@@ -47,37 +49,69 @@ public class PlayerController : MonoBehaviour
         else moveDirection = moveDirection.normalized * moveSpeed;
 
         moveDirection.y = yStore;
+		
+		
 
         if (charController.isGrounded)
         {
-			canDub = true;
+			canDub = false;
+			canDub2 = true;
             moveDirection.y = 0f;
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpForce;
             }
+			
         }
-        else if (canDub){
-			canDub = false;
-			 moveDirection.y = 0f;
-			 if (Input.GetButton("Jump"))
+		if(Input.GetButtonUp("Jump")){
+			if(canDub2){
+				canDub = true;
+				Debug.Log("dubtru");
+			}
+			}
+			
+	    if(canDub){
+			if(Input.GetButton("Jump"))
+			{
+				moveDirection.y  = jumpForce;
+				canDub = false;
+				canDub2 = false;
+			}
+		}
+        /*else if (canDub){
+			if(Input.GetButtonUp("Jump")){
+				canDub2 = true;
+				Debug.Log("dub2");
+			}
+			Debug.Log(canDub2);
+			if(canDub2){
+				Debug.Log("firstiftrue");
+			 if (Input.GetButtonDown("Jump"))
 			 {
                 moveDirection.y = jumpForce;
+				Debug.Log("doublejumped");
 			 }
-		}
+			 canDub2 = false;
+			 canDub = false;
+			}
+		}*/
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         charController.Move(moveDirection * Time.deltaTime);
 		
 		if (dead) { 
-		Debug.Log(transform.position);
+		
+		//Debug.Log(transform.position);
 		charController.enabled = false;
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		charController.transform.position = respawn;
+		if(charController.transform.position == respawn){
 		charController.enabled = true;
 		dead = false;
-		Debug.Log("seen dead");
-		Debug.Log(transform.position);
+		reloaded = false;
+		Debug.Log("Thinks it worked");
+		}
+		//Debug.Log("seen dead");
+		//Debug.Log(transform.position);
 		}
     }
 	
@@ -89,6 +123,7 @@ public class PlayerController : MonoBehaviour
 			Debug.Log(respawn);
 		}
 		if(other.tag == "Death"){
+			//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 			dead = true;
 			Debug.Log("touched death" + respawn);
 		}
