@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     //public Rigidbody RB;
     public CharacterController charController;
 	public Text displayText;
+	public int levelsCompleted = 0;
+	public bool canDub = true;
 
     private Vector3 moveDirection;
 	private Vector3 respawn;
@@ -48,12 +50,20 @@ public class PlayerController : MonoBehaviour
 
         if (charController.isGrounded)
         {
+			canDub = true;
             moveDirection.y = 0f;
             if (Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpForce;
             }
-        }
+        } else if (canDub){
+			canDub = false;
+			 moveDirection.y = 0f;
+			 if (Input.GetButton("Jump"))
+			 {
+				 moveDirection.y = jumpForce
+			 }
+		}
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         charController.Move(moveDirection * Time.deltaTime);
@@ -61,7 +71,7 @@ public class PlayerController : MonoBehaviour
 		if (dead) { 
 		Debug.Log(transform.position);
 		charController.enabled = false;
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		charController.transform.position = respawn;
 		charController.enabled = true;
 		dead = false;
@@ -82,8 +92,9 @@ public class PlayerController : MonoBehaviour
 			Debug.Log("touched death" + respawn);
 		}
 		if(other.tag == "Finish"){
-			charController.enabled = false;
-			displayText.text = "You win!";
+			SceneManager.LoadScene(sceneName: "Level 1 - City");
+			levelsCompleted++;
+			//displayText.text = "You win!";
 			Debug.Log("touched finish");
 		}
 		if(other.tag == "Level1"){
