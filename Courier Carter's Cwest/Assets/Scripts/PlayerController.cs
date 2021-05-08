@@ -56,12 +56,13 @@ public class PlayerController : MonoBehaviour
             {
                 moveDirection.y = jumpForce;
             }
-        } else if (canDub){
+        }
+        else if (canDub){
 			canDub = false;
 			 moveDirection.y = 0f;
 			 if (Input.GetButton("Jump"))
 			 {
-				 moveDirection.y = jumpForce
+                moveDirection.y = jumpForce;
 			 }
 		}
 
