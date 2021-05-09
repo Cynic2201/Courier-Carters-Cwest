@@ -12,20 +12,25 @@ public class PlayerController : MonoBehaviour
     //public Rigidbody RB;
     public CharacterController charController;
 	public Text displayText;
-	public int levelsCompleted = 0;
-	public bool canDub = false;
-	public bool canDash = false;
-	public bool canSpecial = false;
+	public int levelsCompleted = 1;
+	private bool canDub = false;
+	private bool canDash = false;
+	private bool canSpecial = false;
+	private bool hasDashed = false;
 	public bool reloaded = false;
 
     private Vector3 moveDirection;
 	private Vector3 respawn;
     public float gravityScale;
 	private bool dead = false;
+	float time;
+	Text finalTime;
+
     
     // Start is called before the first frame update
     void Start()
     {
+	    finalTime = GetComponent<Text>();
         //RB = GetComponent<Rigidbody>();
         charController = GetComponent<CharacterController>();
     }
@@ -34,6 +39,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		time += Time.deltaTime;
+		string minutes = Mathf.Floor((time  % 3600)/60).ToString("00");
+		string seconds = (time % 60).ToString("00");
+		//finalTime.text = minutes + ":" + seconds;
+		
         //RB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, RB.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
 
         /*if (Input.GetButtonDown("Jump"))
@@ -55,9 +65,9 @@ public class PlayerController : MonoBehaviour
 
         if (charController.isGrounded)
         {
-			if(canDash){
-				moveSpeed = moveSpeed/10;
-			canDash = false;
+			if(hasDashed){
+				moveSpeed = moveSpeed/4;
+			hasDashed = false;
 			}
 			canDub = false;
 			canDash = false;
@@ -74,6 +84,10 @@ public class PlayerController : MonoBehaviour
 				canDub = true;
 				Debug.Log("dubtru");
 			}
+			if((canSpecial) && levelsCompleted == 2){
+				canDash = true;
+				Debug.Log("dashtru");
+			}
 			}
 			
 	    if(canDub){
@@ -87,8 +101,10 @@ public class PlayerController : MonoBehaviour
 		if(canDash){
 			if(Input.GetButton("Jump"))
 			{
-				moveSpeed = moveSpeed * 10;
+				moveSpeed = moveSpeed * 4;
+				canDash = false;
 				canSpecial = false;
+				hasDashed = true;
 			}
 		}
         /*else if (canDub){
@@ -141,6 +157,7 @@ public class PlayerController : MonoBehaviour
 			Debug.Log("touched death" + respawn);
 		}
 		if(other.tag == "Finish"){
+			Debug.Log(time);
 			SceneManager.LoadScene(sceneName: "Level 1 - City");
 			levelsCompleted++;
 			//displayText.text = "You win!";
