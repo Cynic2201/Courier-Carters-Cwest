@@ -12,19 +12,25 @@ public class PlayerController : MonoBehaviour
     //public Rigidbody RB;
     public CharacterController charController;
 	public Text displayText;
-	public int levelsCompleted = 0;
-	public bool canDub = true;
-	public bool canDub2 = false;
+	public int levelsCompleted = 1;
+	private bool canDub = false;
+	private bool canDash = false;
+	private bool canSpecial = false;
+	private bool hasDashed = false;
 	public bool reloaded = false;
 
     private Vector3 moveDirection;
 	private Vector3 respawn;
     public float gravityScale;
 	private bool dead = false;
+	float time;
+	Text finalTime;
+
     
     // Start is called before the first frame update
     void Start()
     {
+	    finalTime = GetComponent<Text>();
         //RB = GetComponent<Rigidbody>();
         charController = GetComponent<CharacterController>();
     }
@@ -33,6 +39,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		time += Time.deltaTime;
+		string minutes = Mathf.Floor((time  % 3600)/60).ToString("00");
+		string seconds = (time % 60).ToString("00");
+		//finalTime.text = minutes + ":" + seconds;
+		
         //RB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, RB.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
 
         /*if (Input.GetButtonDown("Jump"))
@@ -54,8 +65,13 @@ public class PlayerController : MonoBehaviour
 
         if (charController.isGrounded)
         {
+			if(hasDashed){
+				moveSpeed = moveSpeed/4;
+			hasDashed = false;
+			}
 			canDub = false;
-			canDub2 = true;
+			canDash = false;
+			canSpecial = true;
             moveDirection.y = 0f;
             if (Input.GetButton("Jump"))
             {
@@ -64,9 +80,13 @@ public class PlayerController : MonoBehaviour
 			
         }
 		if(Input.GetButtonUp("Jump")){
-			if((canDub2) && levelsCompleted == 1){
+			if((canSpecial) && levelsCompleted == 1){
 				canDub = true;
 				Debug.Log("dubtru");
+			}
+			if((canSpecial) && levelsCompleted == 2){
+				canDash = true;
+				Debug.Log("dashtru");
 			}
 			}
 			
@@ -75,7 +95,16 @@ public class PlayerController : MonoBehaviour
 			{
 				moveDirection.y  = jumpForce;
 				canDub = false;
-				canDub2 = false;
+				canSpecial = false;
+			}
+			}
+		if(canDash){
+			if(Input.GetButton("Jump"))
+			{
+				moveSpeed = moveSpeed * 4;
+				canDash = false;
+				canSpecial = false;
+				hasDashed = true;
 			}
 		}
         /*else if (canDub){
@@ -98,7 +127,6 @@ public class PlayerController : MonoBehaviour
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         charController.Move(moveDirection * Time.deltaTime);
-		
 		if (dead) { 
 		
 		//Debug.Log(transform.position);
@@ -112,8 +140,9 @@ public class PlayerController : MonoBehaviour
 		}
 		//Debug.Log("seen dead");
 		//Debug.Log(transform.position);
-		}
-    }
+		
+	}
+	}
 	
 		private void OnTriggerEnter(Collider other)
 	{
@@ -128,6 +157,7 @@ public class PlayerController : MonoBehaviour
 			Debug.Log("touched death" + respawn);
 		}
 		if(other.tag == "Finish"){
+			Debug.Log(time);
 			SceneManager.LoadScene(sceneName: "Level 1 - City");
 			levelsCompleted++;
 			//displayText.text = "You win!";
