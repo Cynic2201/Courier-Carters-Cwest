@@ -13,8 +13,9 @@ public class PlayerController : MonoBehaviour
     public CharacterController charController;
 	public Text displayText;
 	public int levelsCompleted = 0;
-	public bool canDub = true;
-	public bool canDub2 = false;
+	public bool canDub = false;
+	public bool canDash = false;
+	public bool canSpecial = false;
 	public bool reloaded = false;
 
     private Vector3 moveDirection;
@@ -54,8 +55,13 @@ public class PlayerController : MonoBehaviour
 
         if (charController.isGrounded)
         {
+			if(canDash){
+				moveSpeed = moveSpeed/10;
+			canDash = false;
+			}
 			canDub = false;
-			canDub2 = true;
+			canDash = false;
+			canSpecial = true;
             moveDirection.y = 0f;
             if (Input.GetButton("Jump"))
             {
@@ -64,7 +70,7 @@ public class PlayerController : MonoBehaviour
 			
         }
 		if(Input.GetButtonUp("Jump")){
-			if((canDub2) && levelsCompleted == 1){
+			if((canSpecial) && levelsCompleted == 1){
 				canDub = true;
 				Debug.Log("dubtru");
 			}
@@ -75,8 +81,13 @@ public class PlayerController : MonoBehaviour
 			{
 				moveDirection.y  = jumpForce;
 				canDub = false;
-				canDub2 = false;
+				canSpecial = false;
 			}
+		if(canDash){
+			if(Input.GetButton("Jump"))
+			{
+				moveSpeed = moveSpeed * 10;
+				canSpecial = false;
 		}
         /*else if (canDub){
 			if(Input.GetButtonUp("Jump")){
@@ -97,7 +108,7 @@ public class PlayerController : MonoBehaviour
 		}*/
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
-        charController.Move(moveDirection * Time.deltaTime);
+        ch arController.Move(moveDirection * Time.deltaTime);
 		
 		if (dead) { 
 		
