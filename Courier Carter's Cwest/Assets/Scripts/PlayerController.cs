@@ -83,11 +83,13 @@ public class PlayerController : MonoBehaviour
 				canDub = false;
 				canSpecial = false;
 			}
+			}
 		if(canDash){
 			if(Input.GetButton("Jump"))
 			{
 				moveSpeed = moveSpeed * 10;
 				canSpecial = false;
+			}
 		}
         /*else if (canDub){
 			if(Input.GetButtonUp("Jump")){
@@ -108,8 +110,7 @@ public class PlayerController : MonoBehaviour
 		}*/
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
-        ch arController.Move(moveDirection * Time.deltaTime);
-		
+        charController.Move(moveDirection * Time.deltaTime);
 		if (dead) { 
 		
 		//Debug.Log(transform.position);
@@ -123,8 +124,9 @@ public class PlayerController : MonoBehaviour
 		}
 		//Debug.Log("seen dead");
 		//Debug.Log(transform.position);
-		}
-    }
+		
+	}
+	}
 	
 		private void OnTriggerEnter(Collider other)
 	{
