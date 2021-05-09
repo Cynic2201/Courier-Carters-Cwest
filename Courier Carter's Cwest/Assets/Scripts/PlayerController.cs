@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 			
         }
 		if(Input.GetButtonUp("Jump")){
-			if(canDub2){
+			if((canDub2) && levelsCompleted == 1){
 				canDub = true;
 				Debug.Log("dubtru");
 			}
