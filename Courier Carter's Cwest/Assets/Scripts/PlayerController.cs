@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 	private bool canSpecial = false;
 	private bool hasDashed = false;
 	public bool reloaded = false;
+	private bool dubPower = false;
+	private bool dashPower = false;
 
     private Vector3 moveDirection;
 	private Vector3 respawn;
@@ -80,11 +82,11 @@ public class PlayerController : MonoBehaviour
 			
         }
 		if(Input.GetButtonUp("Jump")){
-			if((canSpecial) && levelsCompleted == 1){
+			if((canSpecial) && (dubPower)){
 				canDub = true;
 				Debug.Log("dubtru");
 			}
-			if((canSpecial) && levelsCompleted == 2){
+			if((canSpecial) && (dashPower)){
 				canDash = true;
 				Debug.Log("dashtru");
 			}
@@ -166,6 +168,10 @@ public class PlayerController : MonoBehaviour
 		if(other.tag == "Level1"){
 			SceneManager.LoadScene(sceneName: "Level 1 - City");
 			Debug.Log("touched level 1 portal");
+		}
+		if(other.tag == "DubJump"){
+			dubPower = true;
+			Destroy(other.gameObject);
 		}
 	}
 }
