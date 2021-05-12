@@ -39,11 +39,13 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Level 1 - City");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Level 0 - Hub");
+        Resume();
     }
 
     public void QuitGame()
     {
-
+        Application.Quit();
     }
 }
