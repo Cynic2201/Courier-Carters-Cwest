@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
 	public float moveSpeed;
 	public float sprintMultiplyer;
 	public float jumpForce;
-	//public Rigidbody RB;
 	public CharacterController charController;
 	public Text displayText;
 	public int levelsCompleted = 1;
@@ -29,32 +28,18 @@ public class PlayerController : MonoBehaviour
 	Text finalTime;
 
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		finalTime = GetComponent<Text>();
-		//RB = GetComponent<Rigidbody>();
 		charController = GetComponent<CharacterController>();
 	}
 
 
-	// Update is called once per frame
 	void Update()
 	{
 		time += Time.deltaTime;
 		string minutes = Mathf.Floor((time % 3600) / 60).ToString("00");
 		string seconds = (time % 60).ToString("00");
-		//finalTime.text = minutes + ":" + seconds;
-
-		//RB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, RB.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
-
-		/*if (Input.GetButtonDown("Jump"))
-        {
-            RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
-        }*/
-
-		//moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
-
 		float yStore = moveDirection.y;
 		moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
 
@@ -120,31 +105,10 @@ public class PlayerController : MonoBehaviour
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
-			
-		/*else if (canDub){
-			if(Input.GetButtonUp("Jump")){
-				canDub2 = true;
-				Debug.Log("dub2");
-			}
-			Debug.Log(canDub2);
-			if(canDub2){
-				Debug.Log("firstiftrue");
-			 if (Input.GetButtonDown("Jump"))
-			 {
-                moveDirection.y = jumpForce;
-				Debug.Log("doublejumped");
-			 }
-			 canDub2 = false;
-			 canDub = false;
-			}
-		}*/
-
 		moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
 		charController.Move(moveDirection * Time.deltaTime);
 		if (dead)
 		{
-
-			//Debug.Log(transform.position);
 			charController.enabled = false;
 			charController.transform.position = respawn;
 			if (charController.transform.position == respawn)
@@ -154,8 +118,6 @@ public class PlayerController : MonoBehaviour
 				reloaded = false;
 				Debug.Log("Thinks it worked");
 			}
-			//Debug.Log("seen dead");
-			//Debug.Log(transform.position);
 
 		}
 	}
@@ -170,7 +132,6 @@ public class PlayerController : MonoBehaviour
 		}
 		if (other.tag == "Death")
 		{
-			//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 			dead = true;
 			Debug.Log("touched death" + respawn);
 		}
@@ -179,7 +140,6 @@ public class PlayerController : MonoBehaviour
 			Debug.Log(time);
 			SceneManager.LoadScene(sceneName: "Level 2 - Temple");
 			levelsCompleted++;
-			//displayText.text = "You win!";
 			Debug.Log("touched finish");
 		}
 		if (other.tag == "Finish2")
@@ -187,7 +147,6 @@ public class PlayerController : MonoBehaviour
 			Debug.Log(time);
 			SceneManager.LoadScene(sceneName: "Level 3 - Volcano");
 			levelsCompleted++;
-			//displayText.text = "You win!";
 			Debug.Log("touched finish");
 		}
 		if (other.tag == "Level1")
