@@ -115,6 +115,12 @@ public class PlayerController : MonoBehaviour
 				hasDashed = true;
 			}
 		}
+		
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
+			
 		/*else if (canDub){
 			if(Input.GetButtonUp("Jump")){
 				canDub2 = true;
@@ -183,7 +189,12 @@ public class PlayerController : MonoBehaviour
 		}
 		if (other.tag == "DubJump")
 		{
+			if(!(dubPower)){
 			dubPower = true;
+			} else {
+				dubPower = false;
+				dashPower = true;
+			}
 			Destroy(other.gameObject);
 		}
 	}
