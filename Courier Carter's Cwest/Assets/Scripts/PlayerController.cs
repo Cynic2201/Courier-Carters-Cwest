@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
 		if (other.tag == "Finish")
 		{
 			Debug.Log(time);
-			if(time < 100){
+			if(time < 70){
 			SceneManager.LoadScene(sceneName: "Level 2 - Temple");
 			} else { 
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
 		if (other.tag == "Finish2")
 		{
 			Debug.Log(time);
-			if(time < 90){
+			if(time < 60){
 			SceneManager.LoadScene(sceneName: "Level 3 - Volcano");
 			} else { 
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
 		if (other.tag == "Finish3")
 		{
 			Debug.Log(time);
-			if(time < 300){
+			if(time < 180){
 			SceneManager.LoadScene(sceneName: "Level 0 - Hub");
 			} else { 
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
