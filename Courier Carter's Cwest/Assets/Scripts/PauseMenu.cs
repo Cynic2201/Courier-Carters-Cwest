@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -14,15 +15,35 @@ public class PauseMenu : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F))
             if(Paused)
             {
-                pauseMenu.SetActive(false);
-                Time.timeScale = 1f;
-                Paused = false;
+                Resume();
             }
             else
             {
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0f;
-                Paused = true;
+                Pause();
             }
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        Paused = false;
+    }
+
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        Paused = true;
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Level 1 - City");
+    }
+
+    public void QuitGame()
+    {
+
     }
 }
