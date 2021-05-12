@@ -8,6 +8,7 @@ TagManager:
   - Death
   - Level1
   - DubJump
+  - Finish2
   layers:
   - Default
   - TransparentFX
