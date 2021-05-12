@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
-        else
+        if(!PauseMenu.Paused)
         {
             Cursor.lockState = CursorLockMode.Locked;
 
