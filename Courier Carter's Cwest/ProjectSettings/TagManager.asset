@@ -7,6 +7,7 @@ TagManager:
   - Checkpoint
   - Death
   - Level1
+  - DubJump
   layers:
   - Default
   - TransparentFX
