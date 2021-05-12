@@ -44,6 +44,13 @@ public class PauseMenu : MonoBehaviour
         Resume();
     }
 
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
+        Paused = false;
+    }
+
     public void QuitGame()
     {
         Application.Quit();
