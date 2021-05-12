@@ -9,6 +9,7 @@ TagManager:
   - Level1
   - DubJump
   - Finish2
+  - Finish3
   layers:
   - Default
   - TransparentFX
