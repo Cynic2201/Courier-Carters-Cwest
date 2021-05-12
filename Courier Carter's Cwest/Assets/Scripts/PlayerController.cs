@@ -48,8 +48,6 @@ public class PlayerController : MonoBehaviour
 
 		moveDirection.y = yStore;
 
-
-
 		if (charController.isGrounded)
 		{
 			if (hasDashed)
@@ -101,10 +99,6 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 		
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}
 		moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
 		charController.Move(moveDirection * Time.deltaTime);
 		if (dead)
