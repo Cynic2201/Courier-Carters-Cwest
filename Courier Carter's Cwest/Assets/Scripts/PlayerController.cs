@@ -177,7 +177,15 @@ public class PlayerController : MonoBehaviour
 		if (other.tag == "Finish")
 		{
 			Debug.Log(time);
-			SceneManager.LoadScene(sceneName: "Level 1 - City");
+			SceneManager.LoadScene(sceneName: "Level 2 - Temple");
+			levelsCompleted++;
+			//displayText.text = "You win!";
+			Debug.Log("touched finish");
+		}
+		if (other.tag == "Finish2")
+		{
+			Debug.Log(time);
+			SceneManager.LoadScene(sceneName: "Level 3 - Volcano");
 			levelsCompleted++;
 			//displayText.text = "You win!";
 			Debug.Log("touched finish");
