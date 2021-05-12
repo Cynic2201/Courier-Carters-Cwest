@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5c1416401b72c1443b7139ad2eb5f232,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -20195,7 +20196,6 @@ GameObject:
   - component: {fileID: 1768178184}
   - component: {fileID: 1768178183}
   - component: {fileID: 1768178182}
-  - component: {fileID: 1768178186}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -20290,27 +20290,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1768178186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768178181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e170e45f54197114090925fa658ffbf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  useOffsetValues: 0
-  rotateSpeed: 0
-  pivot: {fileID: 0}
-  maxViewAngle: 0
-  minViewAngle: 0
-  pauseMenu: {fileID: 0}
-  isPaused: 0
 --- !u!43 &1809242716
 Mesh:
   m_ObjectHideFlags: 0
