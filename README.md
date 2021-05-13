@@ -24,5 +24,7 @@ Thank you for playing our game!
 
 Made by: 
 Devin Williams
+
 Gabriel Peterson
+
 Tarler Stack
