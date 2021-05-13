@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class TextTimer : MonoBehaviour
@@ -16,6 +17,6 @@ public class TextTimer : MonoBehaviour
     void Update()
     {
 		time += Time.deltaTime;
-        text.text = "Your Time: " + time;
+        text.text = Math.Round(time, 2) + "\n / 80";
     }
 }
