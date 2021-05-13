@@ -17,6 +17,6 @@ public class TextTimer : MonoBehaviour
     void Update()
     {
 		time += Time.deltaTime;
-        text.text = Math.Round(time, 2) + "\n / 80";
+        text.text = Math.Round(time, 2) + "\n /80.00";
     }
 }
