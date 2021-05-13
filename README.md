@@ -4,6 +4,7 @@ Welcome to Courier Carter's Cwest!
 Controls-
 Move with WASD
 Jump with Space
+Open the pause menu with F
 
 When you load in to the hub world, pick your level with the three portals.
 
@@ -20,3 +21,8 @@ Level 2- 35 Seconds
 Level 3- 60 Seconds
 
 Thank you for playing our game!
+
+Made by: 
+Devin Williams
+Gabriel Peterson
+Tarler Stack
