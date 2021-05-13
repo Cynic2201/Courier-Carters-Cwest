@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 	private Vector3 respawn;
 	public float gravityScale;
 	private bool dead = false;
-	float time;
+	public float time;
 	Text finalTime;
 
 
