@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1 - City.unity
     guid: c10704f57cff20041a33fb01ae30a01f
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/Level 3 - Volcano.unity
     guid: d91b6da9f2f9d444c96bf381f7b3db51
   - enabled: 1
