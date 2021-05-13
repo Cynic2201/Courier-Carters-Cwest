@@ -14872,7 +14872,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Courtier Carter's Cwest \nDevin Williams\nGabriel Peterson\nTarler Stack"
+  m_Text: "Courier Carter's Cwest \nDevin Williams\nGabriel Peterson\nTarler Stack"
 --- !u!222 &576420747
 CanvasRenderer:
   m_ObjectHideFlags: 0
