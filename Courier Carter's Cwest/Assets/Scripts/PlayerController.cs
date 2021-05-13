@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
 		if (other.tag == "Finish")
 		{
 			Debug.Log(time);
-			if(time < 70){
+			if(time < 80){
 			SceneManager.LoadScene(sceneName: "Level 2 - Temple");
 			} else { 
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
