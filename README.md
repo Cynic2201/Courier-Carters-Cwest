@@ -24,8 +24,8 @@ Thank you for playing our game!
 
 Made by: 
 
-Devin Williams
+Devin Williams (https://github.com/pokemon2201)
 
-Gabriel Peterson
+Gabriel Peterson (https://github.com/gpeters5uncc)
 
-Tarler Stack
+Tarler Stack (https://github.com/Swalot517)
