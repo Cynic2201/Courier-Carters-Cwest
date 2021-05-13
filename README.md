@@ -23,6 +23,7 @@ Level 3- 60 Seconds
 Thank you for playing our game!
 
 Made by: 
+
 Devin Williams
 
 Gabriel Peterson
